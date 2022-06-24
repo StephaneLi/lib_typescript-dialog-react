@@ -13,54 +13,111 @@ function ___$insertStyle(css) {
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
+var jsxRuntime = require('react/jsx-runtime');
 var freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
 var reactFontawesome = require('@fortawesome/react-fontawesome');
-var React = require('react');
+var react = require('react');
 
-function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-___$insertStyle(".dropdown {\n  font-family: Arial, Helvetica, sans-serif;\n  position: relative;\n  width: 100%;\n  max-width: 250px;\n  min-height: 30px;\n  margin: 30px 0;\n  cursor: pointer;\n}\n.dropdown--show .dropdown__input label, .dropdown--show .dropdown__input i {\n  color: var(--focus-color) !important;\n}\n.dropdown--show .dropdown__choicies {\n  max-height: 170px;\n  border-color: var(--focus-color);\n}\n.dropdown--show i {\n  transform: rotate(180deg);\n}\n.dropdown__input {\n  position: absolute;\n  top: 0;\n  width: 100%;\n  cursor: inherit;\n}\n.dropdown__input label, .dropdown__input input {\n  padding: 5px 10px;\n  height: 30px;\n  cursor: inherit;\n  z-index: 2;\n  color: var(--text-color);\n}\n.dropdown__input label {\n  position: absolute;\n  top: 0;\n  left: 0;\n  line-height: 30px;\n  font-size: 1.2rem;\n  opacity: 0.5;\n  transform-origin: center left;\n  transition: transform 0.15s ease-in-out;\n  z-index: 3;\n  pointer-events: none;\n}\n.dropdown__input__error-message {\n  position: absolute;\n  right: 0;\n  top: 30px;\n  font-size: 0.6rem;\n  color: var(--error-color) !important;\n  animation: error 0.25s ease-in both;\n}\n.dropdown__input__content {\n  position: relative;\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  border: none;\n  width: 100%;\n}\n.dropdown__input__content i {\n  position: absolute;\n  right: 0;\n  width: 40px;\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  transition: transform 0.15s ease-in-out;\n  z-index: 2;\n  color: var(--text-color);\n  pointer-events: none;\n}\n.dropdown__input__content input {\n  flex: 1 1 auto;\n  width: 100%;\n  outline: none;\n  border: none;\n  font-size: 1rem;\n  background: transparent;\n  padding-right: 28px;\n  text-overflow: ellipsis;\n}\n.dropdown__input--error label, .dropdown__input--error input, .dropdown__input--error i {\n  color: var(--error-color) !important;\n}\n.dropdown__input--active label {\n  font-size: 16px !important;\n  opacity: 1;\n  transform: translate(-5px, -30px) scale(0.85);\n}\n.dropdown__choicies {\n  position: absolute;\n  min-height: 38px;\n  top: 0;\n  width: 100%;\n  margin: 0;\n  z-index: 1;\n  max-height: 28px;\n  background-color: white;\n  overflow: hidden;\n  border: 1px solid var(--border-color);\n  color: var(--text-color);\n  border-radius: var(--border-radius);\n  transition: max-height 0.3s ease-in-out;\n}\n.dropdown__choicies ul {\n  margin: 0;\n  padding: 0;\n  margin-top: 38px;\n  overflow-y: auto;\n  height: 100%;\n  max-height: 140px;\n}\n.dropdown__choicies li {\n  list-style: none;\n  text-align: left !important;\n  position: relative;\n  padding: 2px 10px;\n  font-size: 0.9rem;\n  color: var(--text-color);\n}\n.dropdown__choicies li::before {\n  position: absolute;\n  top: 0;\n  left: 0;\n  content: \"\";\n  height: 100%;\n  width: 100%;\n  background-color: var(--focus-color) !important;\n  opacity: 0;\n}\n.dropdown__choicies li:hover {\n  color: var(--focus-color) !important;\n}\n.dropdown__choicies li:hover::before {\n  opacity: 0.2;\n}\n.dropdown__choicies li:last-child {\n  padding-bottom: 10px;\n}\n.dropdown__choicies--error {\n  border: 1px solid var(--error-color);\n}\n\n@keyframes error {\n  0% {\n    opacity: 0;\n    transform: translateX(3px);\n  }\n  25% {\n    transform: translateX(-3px);\n  }\n  50% {\n    transform: translateX(3px);\n  }\n  75% {\n    transform: translateX(-3px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}");
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
 
-var Dropdown = function (_a) {
-    var label = _a.label, name = _a.name, _b = _a.errorMessage, errorMessage = _b === void 0 ? "Erreur message" : _b, _c = _a.error, error = _c === void 0 ? false : _c, choicies = _a.choicies, _d = _a.value, value = _d === void 0 ? '' : _d, _e = _a.borderColor, borderColor = _e === void 0 ? '#DADCE0' : _e, _f = _a.textColor, textColor = _f === void 0 ? '#70757A' : _f, _g = _a.focusColor, focusColor = _g === void 0 ? '#059ECE' : _g, _h = _a.errorColor, errorColor = _h === void 0 ? '#EF6C6C' : _h, _j = _a.borderRadius, borderRadius = _j === void 0 ? '5px' : _j, _k = _a.zIndex, zIndex = _k === void 0 ? 1 : _k, onSelect = _a.onSelect;
-    var inputElement = React.useRef(null);
-    var _l = React.useState(false), showOptions = _l[0], setShowOptions = _l[1];
-    var _m = React.useState(value), inputValue = _m[0], setInputValue = _m[1];
-    React.useEffect(function () {
-        setInputValue(value);
-    }, [value]);
-    var displayOptions = function () {
-        var _a;
-        (_a = inputElement.current) === null || _a === void 0 ? void 0 : _a.focus();
-        setShowOptions(!showOptions);
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
     };
-    var onClickOption = function (e) {
-        var _a;
-        setInputValue(e.currentTarget.innerHTML);
-        (_a = inputElement.current) === null || _a === void 0 ? void 0 : _a.blur();
-        if (onSelect)
-            onSelect(e.currentTarget.innerHTML);
-    };
-    return (React__default["default"].createElement("div", { "data-testid": "container", className: "dropdown".concat(showOptions ? ' dropdown--show' : ''), style: {
-            zIndex: zIndex,
-            '--text-color': textColor,
-            '--focus-color': focusColor,
-            '--error-color': errorColor,
-            '--border-color': borderColor,
-            '--border-radius': borderRadius,
-        } },
-        React__default["default"].createElement("div", { "data-testid": "dropdown", onClick: displayOptions, className: "dropdown__input".concat(inputValue !== '' ? ' dropdown__input--active' : '').concat(error ? ' dropdown__input--error' : '') },
-            React__default["default"].createElement("label", { htmlFor: name }, label),
-            React__default["default"].createElement("div", { className: "dropdown__input__content" },
-                React__default["default"].createElement("input", { "data-testid": "input", ref: inputElement, name: name, readOnly: true, onBlur: function () { return setShowOptions(false); }, value: inputValue }),
-                React__default["default"].createElement("i", null,
-                    React__default["default"].createElement(reactFontawesome.FontAwesomeIcon, { icon: freeSolidSvgIcons.faAngleDown }))),
-            error && (React__default["default"].createElement("p", { className: "dropdown__input__error-message" }, errorMessage))),
-        React__default["default"].createElement("div", { className: "dropdown__choicies".concat(error ? ' dropdown__choicies--error' : '') },
-            React__default["default"].createElement("ul", null, choicies.map(function (element, index) { return (React__default["default"].createElement("li", { onClick: onClickOption, key: 'option-' + index }, element)); })))));
+    return __assign.apply(this, arguments);
 };
 
-exports["default"] = Dropdown;
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+___$insertStyle(".dialog {\n  position: fixed;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 999;\n  background-color: rgba(0, 0, 0, 0.8);\n  animation: show-dialog calc(var(--duration) * 0.4) ease-out both;\n}\n.dialog.hide {\n  animation: hide-dialog calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n.dialog__modal {\n  position: relative;\n  background-color: white;\n  border-radius: 10px 0px 10px 10px;\n  padding: 30px 50px;\n  font-weight: bold;\n  animation: show-modal calc(var(--duration) * 0.6) ease-out both calc(var(--duration) * 0.6);\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.dialog__modal i {\n  position: absolute;\n  top: 5px;\n  right: 10px;\n  cursor: pointer;\n  transition: opacity 0.15s ease-in-out;\n}\n.dialog__modal i:hover {\n  opacity: 0.5;\n}\n.dialog__modal.hide {\n  animation: hide-modal calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n@keyframes show-dialog {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes hide-dialog {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes show-modal {\n  0% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n@keyframes hide-modal {\n  0% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n}");
+
+var Dialog = function (_a) {
+    var text = _a.text, _b = _a.showDialog, showDialog = _b === void 0 ? false : _b, _c = _a.duration, duration = _c === void 0 ? 500 : _c, onClose = _a.onClose;
+    var _d = react.useState(showDialog), showDialogAction = _d[0], setShowDialogAction = _d[1];
+    var _e = react.useState(showDialogAction), displayDialog = _e[0], setDisplayDialog = _e[1];
+    react.useEffect(function () {
+        if (showDialogAction) {
+            setDisplayDialog(true);
+        }
+        else {
+            var timer_1 = setTimeout(function () {
+                setDisplayDialog(false);
+                clearTimeout(timer_1);
+            }, duration);
+        }
+    }, [showDialogAction, duration]);
+    var onCloseAction = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    setShowDialogAction(false);
+                    if (!onClose) return [3 /*break*/, 2];
+                    return [4 /*yield*/, onClose()];
+                case 1:
+                    _a.sent();
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
+            }
+        });
+    }); };
+    return (jsxRuntime.jsx("div", __assign({ "data-testid": "dialog", className: "dialog".concat(!showDialogAction ? ' hide' : ''), style: {
+            display: displayDialog ? 'flex' : 'none',
+            '--duration': duration + 'ms'
+        } }, { children: displayDialog ? (jsxRuntime.jsxs("div", __assign({ className: "dialog__modal".concat(!showDialogAction ? ' hide' : '') }, { children: [jsxRuntime.jsx("p", { children: text }), jsxRuntime.jsx("i", __assign({ "data-testid": "close-button", onClick: onCloseAction }, { children: jsxRuntime.jsx(reactFontawesome.FontAwesomeIcon, { icon: freeSolidSvgIcons.faCircleXmark }) }))] }))) : null })));
+};
+
+exports["default"] = Dialog;
 //# sourceMappingURL=index.js.map
