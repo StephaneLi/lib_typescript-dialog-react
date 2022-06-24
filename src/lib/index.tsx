@@ -7,10 +7,11 @@ type DialogProps = {
   text: string,
   showDialog?: boolean,
   duration?: number,
+  className?:string,
   onClose?: CallableFunction
 }
 
-const Dialog: FunctionComponent<DialogProps> = ({ text, showDialog= false, duration = 500, onClose}) => {
+const Dialog: FunctionComponent<DialogProps> = ({ text, showDialog= false, duration = 500, className, onClose}) => {
   const [showDialogAction, setShowDialogAction] = useState<boolean>(showDialog)
   const [displayDialog, setDisplayDialog] = useState<boolean>(showDialogAction)
 
@@ -33,7 +34,7 @@ const Dialog: FunctionComponent<DialogProps> = ({ text, showDialog= false, durat
   return (
     <div 
       data-testid="dialog"
-      className={`dialog${ !showDialogAction ? ' hide' : '' }`} 
+      className={`dialog ${className} ${ !showDialogAction ? ' hide' : '' }`} 
       style={{
         display: displayDialog ? 'flex' : 'none',
         '--duration': duration + 'ms'

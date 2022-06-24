@@ -34,6 +34,7 @@ const SomeComponent = () => {
 |text|string|yes|N/A|
 |showDialog|boolean|no|false|
 |duration|number|no|500|
+|className|string|no|N/A|
 |onClose|function|no|N/A|
 
 ## License  

@@ -4,6 +4,7 @@ declare type DialogProps = {
     text: string;
     showDialog?: boolean;
     duration?: number;
+    className?: string;
     onClose?: CallableFunction;
 };
 declare const Dialog: FunctionComponent<DialogProps>;

@@ -85,7 +85,7 @@ function __generator(thisArg, body) {
 ___$insertStyle(".dialog {\n  position: fixed;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 999;\n  background-color: rgba(0, 0, 0, 0.8);\n  animation: show-dialog calc(var(--duration) * 0.4) ease-out both;\n}\n.dialog.hide {\n  animation: hide-dialog calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n.dialog__modal {\n  position: relative;\n  background-color: white;\n  border-radius: 10px 0px 10px 10px;\n  padding: 30px 50px;\n  font-weight: bold;\n  animation: show-modal calc(var(--duration) * 0.6) ease-out both calc(var(--duration) * 0.6);\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.dialog__modal i {\n  position: absolute;\n  top: 5px;\n  right: 10px;\n  cursor: pointer;\n  transition: opacity 0.15s ease-in-out;\n}\n.dialog__modal i:hover {\n  opacity: 0.5;\n}\n.dialog__modal.hide {\n  animation: hide-modal calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n@keyframes show-dialog {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes hide-dialog {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes show-modal {\n  0% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n@keyframes hide-modal {\n  0% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n}");
 
 var Dialog = function (_a) {
-    var text = _a.text, _b = _a.showDialog, showDialog = _b === void 0 ? false : _b, _c = _a.duration, duration = _c === void 0 ? 500 : _c, onClose = _a.onClose;
+    var text = _a.text, _b = _a.showDialog, showDialog = _b === void 0 ? false : _b, _c = _a.duration, duration = _c === void 0 ? 500 : _c, className = _a.className, onClose = _a.onClose;
     var _d = react.useState(showDialog), showDialogAction = _d[0], setShowDialogAction = _d[1];
     var _e = react.useState(showDialogAction), displayDialog = _e[0], setDisplayDialog = _e[1];
     react.useEffect(function () {
@@ -113,7 +113,7 @@ var Dialog = function (_a) {
             }
         });
     }); };
-    return (jsxRuntime.jsx("div", __assign({ "data-testid": "dialog", className: "dialog".concat(!showDialogAction ? ' hide' : ''), style: {
+    return (jsxRuntime.jsx("div", __assign({ "data-testid": "dialog", className: "dialog ".concat(className, " ").concat(!showDialogAction ? ' hide' : ''), style: {
             display: displayDialog ? 'flex' : 'none',
             '--duration': duration + 'ms'
         } }, { children: displayDialog ? (jsxRuntime.jsxs("div", __assign({ className: "dialog__modal".concat(!showDialogAction ? ' hide' : '') }, { children: [jsxRuntime.jsx("p", { children: text }), jsxRuntime.jsx("i", __assign({ "data-testid": "close-button", onClick: onCloseAction }, { children: jsxRuntime.jsx(reactFontawesome.FontAwesomeIcon, { icon: freeSolidSvgIcons.faCircleXmark }) }))] }))) : null })));
