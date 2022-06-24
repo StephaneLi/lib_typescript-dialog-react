@@ -17,7 +17,7 @@ or
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import dialog from '@stephane1920/ts-dialog-react';
+import Dialog from '@stephane1920/ts-dialog-react';
 
 const SomeComponent = () => {
   return (
