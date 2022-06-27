@@ -29,7 +29,9 @@
     "build": "npm run clean && rollup -c",
     "test": "react-scripts test",
     "test-coverage": "react-scripts test a --coverage --collectCoverageFrom='./src/lib/*'",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
