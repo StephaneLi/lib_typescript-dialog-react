@@ -16,6 +16,10 @@ const Dialog: FunctionComponent<DialogProps> = ({ text, showDialog= false, durat
   const [displayDialog, setDisplayDialog] = useState<boolean>(showDialogAction)
 
   useEffect(() => {
+    setShowDialogAction(showDialog)
+  }, [showDialog])
+
+  useEffect(() => {
     if(showDialogAction) {
       setDisplayDialog(true)
     } else {

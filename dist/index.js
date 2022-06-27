@@ -89,6 +89,9 @@ var Dialog = function (_a) {
     var _d = react.useState(showDialog), showDialogAction = _d[0], setShowDialogAction = _d[1];
     var _e = react.useState(showDialogAction), displayDialog = _e[0], setDisplayDialog = _e[1];
     react.useEffect(function () {
+        setShowDialogAction(showDialog);
+    }, [showDialog]);
+    react.useEffect(function () {
         if (showDialogAction) {
             setDisplayDialog(true);
         }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Dialog from './lib';
+import './style.css';
 
 
 const root = ReactDOM.createRoot(
@@ -9,6 +10,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Dialog text="message de bienvenue" showDialog={true} />
+    <div className="demo">
+      <Dialog text="message de bienvenue" showDialog={true} />
+    </div>
   </React.StrictMode>
 )
