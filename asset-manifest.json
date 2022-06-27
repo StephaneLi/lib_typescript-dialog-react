@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lib_typescript-dialog-react/static/css/main.a77f512f.css",
+    "main.js": "/lib_typescript-dialog-react/static/js/main.0321d9ca.js",
+    "index.html": "/lib_typescript-dialog-react/index.html",
+    "main.a77f512f.css.map": "/lib_typescript-dialog-react/static/css/main.a77f512f.css.map",
+    "main.0321d9ca.js.map": "/lib_typescript-dialog-react/static/js/main.0321d9ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a77f512f.css",
+    "static/js/main.0321d9ca.js"
+  ]
+}
