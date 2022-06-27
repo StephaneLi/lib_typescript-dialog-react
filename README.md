@@ -6,7 +6,7 @@
 A simple customizable react dialog dialog with message in typescript.  
 From project 14 OpenClassrooms, react app developer  
   
-[Projet 14 Openclassroms](https://github.com/StephaneLi/StephaneLieumont_14_03062022)
+[Projet 14 Openclassroms](https://github.com/StephaneLi/StephaneLieumont_14_03062022)  
 [Demo](https://stephaneli.github.io/lib_typescript-dialog-react/)
 
 ## Installation
