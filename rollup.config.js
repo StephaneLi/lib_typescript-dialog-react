@@ -15,7 +15,11 @@ export default {
     }
   ],
   plugins: [
-    sass({ insert: true }),
+    sass({
+      output: "./dist/style.css",
+      failOnError: true,
+      runtime: require("sass"),
+    }),
     typescript({ objectHashIgnoreUnknownHack: true })
   ],
   external: ['react', 'react-dom']

@@ -1,22 +1,11 @@
-
-
-function ___$insertStyle(css) {
-    if (!css || typeof window === 'undefined') {
-        return;
-    }
-    const style = document.createElement('style');
-    style.setAttribute('type', 'text/css');
-    style.innerHTML = css;
-    document.head.appendChild(style);
-    return css;
-}
-
 Object.defineProperty(exports, '__esModule', { value: true });
 
 var jsxRuntime = require('react/jsx-runtime');
 var freeSolidSvgIcons = require('@fortawesome/free-solid-svg-icons');
 var reactFontawesome = require('@fortawesome/react-fontawesome');
 var react = require('react');
+
+require('./style.css');
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -81,8 +70,6 @@ function __generator(thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 }
-
-___$insertStyle(".dialog {\n  position: fixed;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  z-index: 999;\n  background-color: rgba(0, 0, 0, 0.8);\n  animation: show-dialog calc(var(--duration) * 0.4) ease-out both;\n}\n.dialog.hide {\n  animation: hide-dialog calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n.dialog__modal {\n  position: relative;\n  background-color: white;\n  border-radius: 10px 0px 10px 10px;\n  padding: 30px 50px;\n  font-weight: bold;\n  animation: show-modal calc(var(--duration) * 0.6) ease-out both calc(var(--duration) * 0.6);\n  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;\n}\n.dialog__modal i {\n  position: absolute;\n  top: 5px;\n  right: 10px;\n  cursor: pointer;\n  transition: opacity 0.15s ease-in-out;\n}\n.dialog__modal i:hover {\n  opacity: 0.5;\n}\n.dialog__modal.hide {\n  animation: hide-modal calc(var(--duration) * 0.4) ease-in both calc(var(--duration) * 0.6);\n}\n@keyframes show-dialog {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n@keyframes hide-dialog {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n@keyframes show-modal {\n  0% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n@keyframes hide-modal {\n  0% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-5px);\n  }\n  100% {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n}");
 
 var Dialog = function (_a) {
     var text = _a.text, _b = _a.showDialog, showDialog = _b === void 0 ? false : _b, _c = _a.duration, duration = _c === void 0 ? 500 : _c, className = _a.className, onClose = _a.onClose;
